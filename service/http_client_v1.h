@@ -34,10 +34,10 @@ namespace Datacratic {
 struct HttpClientV1 : public HttpClientImpl {
     HttpClientV1(const std::string & baseUrl,
                  int numParallel, int queueSize);
-
+   //直接调用std::terminate()结束程序
     HttpClientV1(HttpClientV1 && other) noexcept;
     HttpClientV1 & operator = (HttpClientV1 && other) noexcept;
-
+   //禁止默认拷贝赋值构造
     HttpClientV1(const HttpClientV1 & other) = delete;
 
     ~HttpClientV1();
